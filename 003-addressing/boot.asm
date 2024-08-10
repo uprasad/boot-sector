@@ -6,11 +6,14 @@ mov bx, the_secret
 add bx, 0x7c00
 mov al, [bx]
 int 0x10
+add bx, 0x2
+mov al, [bx]
+int 0x10
 
 jmp $
 
 the_secret:
-  db 'X'
+  db 'XYZ'
 
 ; $ is the address of the current instruction.
 ; $$ is the address of the first instruction in this section.
