@@ -9,6 +9,21 @@ int 0x10
 add bx, 0x2
 mov al, [bx]
 int 0x10
+sub bx, 0x1
+mov al, [bx]
+int 0x10
+
+mov cl, 0x67  ; the letter 'g'
+mov bx, 0x8000
+mov byte [bx], cl
+mov al, [bx]
+int 0x10
+
+mov cl, 0x68
+add bx, 1
+mov byte [bx], cl
+mov al, [bx]
+int 0x10
 
 jmp $
 
