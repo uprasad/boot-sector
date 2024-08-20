@@ -11,6 +11,9 @@ game_of_life:
   mov bx, 0x9000
   call init_buffer
 
+  mov bx, HI_STRING
+  call print_string
+
   mov dl, 0       ; Keep track of the number of generations
   mov bx, 0x8000  ; Current frame location
   mov cx, 0x9000  ; Next frame location
@@ -36,6 +39,11 @@ next_frame:
 
   call print_buffer
   add dl, 1
+
+  push bx
+  mov bx, PROMPT_STRING
+  call print_string
+  pop bx
 
   call update_next_frame
 

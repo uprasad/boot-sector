@@ -16,6 +16,10 @@ jmp $
 %include "update_next_frame.asm"
 %include "game_of_life.asm"
 
+HI_STRING:
+  db 'Press any key to start the game', 0
+PROMPT_STRING:
+  db 'Press any key to advance to the next generation', 0
 BYE_STRING:
   db 'Game over!', 0
 
